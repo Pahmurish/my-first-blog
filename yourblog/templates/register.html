@@ -1,0 +1,31 @@
+{% extends "yourblog/base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+   
+
+            <form method="post" action="{% url 'register' %}">
+
+                {% csrf_token %}
+
+                  {% for field in register_form %}
+
+                      
+
+                        {{ field.errors }} <br/>
+
+                        {{ field.label_tag }} <br/>
+
+                        {{ field }} <br/>
+
+
+                {% endfor %}
+			   
+		<br/> <input type="submit" value="Registrate" />
+
+            </form>
+
+  
+{% endblock content %}

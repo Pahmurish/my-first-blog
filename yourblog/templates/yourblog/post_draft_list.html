@@ -1,23 +1,17 @@
+{% load staticfiles %}
 {% extends 'yourblog/base.html' %}
 
 {% block content %}
-	
-	
     {% for post in posts %}
+	<div class="content">
         <div class="post">
-		{{ form.media }}
-		{{form.published_date}}
-            <div class="date">
-                {{ post.published_date }} by {{ post.author }}
-            </div>
+            <p class="date">created: {{ post.created_date|date:'d-m-Y' }}</p>
             <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{% autoescape off%}{{ post.text|linebreaksbr }}{% endautoescape %}</p>
-			<a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
-			<hr/>
-			</div>
-			
+            <p>{{ post.text|truncatechars:200 }}</p>
+        </div>
+	</div>
     {% endfor %}
-		<div class="cloud">
+	<div class="cloud">
 	облако тегов:
 	{% for keyword in keywords %}
 		<a href="/keyword/{{ keyword.id }}">{{ keyword.name }}</a>

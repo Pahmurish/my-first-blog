@@ -1,9 +1,22 @@
 body {
     padding-left: 15px;
 }
+html,
+body {
+  height: 100%;
+}
+.content {
+  box-sizing: border-box;
+  min-height: 100%;
+  padding-bottom: 90px;
+}
+.footer {
+  height: 80px;
+  margin-top: -80px;
+}
 
 .page-header {
-    background-color: #FAFA14;
+    background-color: #0BA1BF;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
@@ -52,4 +65,11 @@ h1, h2, h3, h4 {
 .post h1 a:hover {
     color: #000000;
 	text-decoration: none;
+}
+
+.cloud {
+	display: block;
+	width: 80px;
+  margin-top: -80px;
+  text-align:  center;
 }

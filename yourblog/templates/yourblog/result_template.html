@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+</head>
+<body>
+<h1>Questions</h1>
+<ul>
+{% for post in post_list %}
+   <li>{{ post.title }}</li>
+{% endfor %}
+</ul>
+</body>
+</html>

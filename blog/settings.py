@@ -18,7 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-
+LOGIN_REDIRECT_URL = '/'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'l%(bu@fqhth0-!tdhex@lp^pt%0s^h9#xe&qae#^6*d4-rvvxn'
 
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'yourblog',
+    #'schedule',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -101,6 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -120,3 +123,20 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_CONFIGS = {
+'default': {
+'toolbar': 'None',
+},
+}
+
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_IMAGE_BACKEND =  'pillow'
+
+#TEMPLATE_CONTEXT_PROCESSORS = "jango.core.context_processors.request"
